@@ -1,27 +1,336 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scare the Fox | The Frankies</title>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;color:#411c30;font-family:'Comic Neue',cursive;background:#ffb5d2}a{color:inherit}.book{min-height:100vh;display:flex}.sidebar{width:235px;flex-shrink:0;padding:34px 17px;background:repeating-linear-gradient(0deg,#fa5b8f 0 18px,#ffc84f 18px 36px,#72d5b5 36px 54px,#7ad6e8 54px 72px);border-right:13px solid #f778a4}.logo,.sidebar a{display:block;background:#fff1dc;border:3px dashed #f05794;box-shadow:5px 5px #bf3073;text-decoration:none;color:#bb2069}.logo{font:700 35px/1.12 Fredoka,sans-serif;text-align:center;padding:24px 10px;transform:rotate(-4deg);margin:10px 0 65px}.sidebar nav{display:grid;gap:22px}.sidebar nav a{font-size:19px;font-weight:700;padding:14px;transform:rotate(-2deg)}.sidebar nav a:nth-child(2){transform:rotate(2deg)}.page{flex:1;min-width:0;padding:38px 42px 110px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,#ffcae0,transparent 38%),repeating-linear-gradient(45deg,#ffb1d0 0 18px,#ffabd0 18px 36px)}.sheet{position:relative;max-width:1160px;margin:auto;padding:40px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:38px;align-items:center;background:#f98fbd;border:14px solid #d9367e;box-shadow:12px 14px 0 #60c5b4;outline:7px solid #ffcee2}.photo{padding:12px 12px 32px;background:#fff0df;box-shadow:7px 8px 0 #b72c70;transform:rotate(-2deg);border:2px solid #e6b5a7}.photo img{display:block;width:100%;height:auto}.tape{position:absolute;top:14px;left:29%;width:110px;height:34px;background:#ffdf85bb;transform:rotate(-9deg);z-index:2}.info{text-align:center}.label{display:inline-block;background:#fff2cb;padding:10px 20px;border:2px dashed #dc4d88;font-weight:700;color:#bd206d;transform:rotate(-3deg)}h1{font:700 clamp(58px,7vw,104px)/1 Fredoka,sans-serif;color:#3c2032;letter-spacing:3px;margin:20px 0 0;text-shadow:4px 4px #fc66ab;-webkit-text-stroke:1px #fff0df}.fox{display:inline-block;background:#ffe1a0;padding:8px 25px;transform:rotate(-3deg);font-size:22px;margin:10px 0 22px}.note,.traits{background:#fff0dd;text-align:left;padding:23px 28px;border:2px dashed #db79a1;box-shadow:6px 7px #c84a88;transform:rotate(1deg);font-size:20px;line-height:1.5}.note h2,.traits h2{font:700 26px Fredoka,sans-serif;color:#c82d77;margin:0 0 12px}.note p{margin:0 0 13px}.traits{margin:22px auto 0;max-width:420px;background:#ffe0e7;transform:rotate(-2deg)}.traits p{margin:7px 0}.doodle{position:absolute;pointer-events:none;font-size:72px;color:#54c8ad;font-weight:bold;z-index:2;text-shadow:2px 2px #26493d}.d1{top:2px;left:14px;transform:rotate(-15deg)}.d2{right:8px;top:20px}.d3{bottom:25px;left:10px}.d4{right:15px;bottom:15px}.controls{max-width:1050px;margin:38px auto 0;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}.controls a,.controls span{background:#fff0d9;border:3px dashed #d64d86;padding:10px 20px;text-decoration:none;font-size:20px;font-weight:700;color:#ae2464}.controls .disabled{opacity:.55}.mascot{position:fixed;right:15px;bottom:14px;z-index:10;background:#fff1df;border:3px solid #c92e77;border-radius:30px;padding:12px 18px;max-width:190px;text-align:center;font-weight:700;box-shadow:4px 5px #e873a2}.mascot small{display:block;font-weight:400;margin-top:4px}@media(max-width:900px){.book{display:block}.sidebar{width:100%;border-right:0;border-bottom:10px solid #f778a4;padding:12px}.logo{font-size:27px;margin:0 auto 12px;max-width:260px}.sidebar nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.sidebar nav a{font-size:16px}.page{padding:30px 20px 120px}.sheet{grid-template-columns:1fr;padding:22px;gap:24px}.note,.traits{font-size:18px}.mascot{position:static;margin:20px auto 0}}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #170c16;
+  color: #ffdaeb;
+  font-family: 'Comic Neue', cursive;
+}
+
+.book {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 225px;
+  flex-shrink: 0;
+  padding: 30px 18px;
+  background: repeating-linear-gradient(
+    0deg,
+    #ff438c 0 15px,
+    #151015 15px 29px,
+    #46bda9 29px 34px,
+    #a32d72 34px 47px
+  );
+  border-right: 9px dashed #0d090e;
+}
+
+.logo, .sidebar a {
+  display: block;
+  padding: 15px;
+  margin-bottom: 24px;
+  background: #1d111c;
+  border: 3px dashed #ff4f9c;
+  box-shadow: 6px 6px 0 #49c5b0;
+  color: #ff83b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  font-family: Fredoka, sans-serif;
+  font-size: 31px;
+  text-align: center;
+  transform: rotate(-5deg);
+}
+
+.sidebar a:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.page {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 65px 45px 120px;
+  background:
+    repeating-linear-gradient(
+      25deg,
+      transparent 0 24px,
+      #2e1329 25px 27px,
+      transparent 28px 60px
+    ),
+    #a92b69;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 5px dashed #190b17;
+  pointer-events: none;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  margin: 0 auto 35px;
+  max-width: 650px;
+  padding: 15px;
+  background: #170e17;
+  border: 5px solid #ff5299;
+  transform: rotate(-3deg);
+  box-shadow: 9px 10px 0 #46bda9;
+}
+
+.title small {
+  color: #56d4bd;
+  letter-spacing: 4px;
+}
+
+.title h1 {
+  font: 700 clamp(65px, 10vw, 120px)/1 Fredoka, sans-serif;
+  margin: 5px 0;
+  color: #ff4b9b;
+  text-shadow: 5px 5px #080808;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 45px;
+  align-items: start;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.photo {
+  position: relative;
+  padding: 13px 13px 55px;
+  background: #f6d8ce;
+  border: 5px solid #130b12;
+  transform: rotate(-3deg);
+  box-shadow: 13px 14px 0 #190d18;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo::after {
+  content: "FOUND: OCTOBER ONLY  //  001";
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: #611c42;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tape {
+  position: absolute;
+  top: -17px;
+  left: 32%;
+  z-index: 2;
+  width: 140px;
+  height: 38px;
+  background: #51c9b4aa;
+  transform: rotate(9deg);
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.note {
+  padding: 26px;
+  color: #24121f;
+  background: #f3c3d5;
+  border: 3px dashed #191019;
+  box-shadow: 9px 10px 0 #170c16;
+  transform: rotate(2deg);
+}
+
+.note:nth-child(even) {
+  background: #bce4d8;
+  transform: rotate(-3deg);
+}
+
+.note h2 {
+  margin-top: 0;
+  font: 700 30px Fredoka, sans-serif;
+  color: #a41d60;
+}
+
+.note p, .note li {
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.note ul {
+  padding-left: 25px;
+}
+
+.warning {
+  display: inline-block;
+  background: #161016;
+  color: #ff5b9e;
+  padding: 12px 20px;
+  border: 3px solid #4ed0b8;
+  transform: rotate(-6deg);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 80px;
+  color: #50d6b9;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.d1 { top: 30px; left: 5%; transform: rotate(20deg); }
+.d2 { top: 240px; right: 2%; color: #170b17; }
+.d3 { bottom: 35px; left: 3%; transform: rotate(-25deg); }
+.d4 { bottom: 80px; right: 5%; color: #ffb7d8; }
+
+.stamp {
+  position: absolute;
+  top: 45%;
+  right: 1%;
+  padding: 12px;
+  border: 4px solid #1a1018;
+  color: #180c16;
+  font-weight: bold;
+  transform: rotate(17deg);
+  opacity: .8;
+}
+
+.footer {
+  position: relative;
+  margin: 55px auto 0;
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer a, .footer span {
+  padding: 13px 18px;
+  background: #170d17;
+  color: #ff85ba;
+  border: 2px dashed #4ad4ba;
+  text-decoration: none;
+}
+
+.mascot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  max-width: 180px;
+  background: #1c101b;
+  color: #ffc4dc;
+  border: 3px solid #48c8b1;
+  border-radius: 30px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 0 #ff4791;
+}
+
+@media (max-width: 900px) {
+  .book { flex-direction: column; }
+  .sidebar { width: 100%; border-right: 0; }
+  .sidebar a { display: inline-block; margin: 8px; }
+  .layout { grid-template-columns: 1fr; }
+  .page { padding: 45px 25px 150px; }
+  .doodle { font-size: 45px; }
+  .mascot { position: relative; margin: 35px 0 0 auto; }
+}
 </style>
 </head>
 <body>
 <div class="book">
-<aside class="sidebar"><div class="logo">★ The<br>Frankies ♡</div><nav><a href="index.html">♡ Home</a><a href="index.html#about">☆ About</a><a href="frankies.html">✿ Meet the Frankies</a></nav></aside>
-<main class="page">
-<section class="sheet" aria-label="Scare's scrapbook page">
-<span class="doodle d1">♡</span><span class="doodle d2">☆</span><span class="doodle d3">✦</span><span class="doodle d4">♡</span>
-<div class="photo"><span class="tape"></span><img src="scare.png" alt="Scare, a handmade black skull-pattern fox plushie, on bright pink lace with turquoise doodles"></div>
-<div class="info"><span class="label">★ Frankie No. 01 ★</span><h1>SCARE</h1><div class="fox">the fox ♡</div>
-<article class="note"><h2>♡ About Scare</h2><p>Scare is a shy and reclusive little fox who also happens to be the very first Frankie I ever made!</p><p>She got the scar on her stomach after getting caught in a fox trap. Ever since then, she's been scared of humans and the outside world, so she prefers to stay hidden somewhere safe.</p><p>She only comes out during October, when spooky season makes her feel a little braver. She might look scary, but she's really a sweet little fox who's been through a lot. ♡</p></article>
-<article class="traits"><h2>★ Her personality</h2><p>♡ Shy and quiet</p><p>♡ Reclusive and cautious</p><p>♡ Afraid of humans and the outdoors</p><p>♡ Sweet once she trusts you</p><p>♡ Feels bravest in October</p></article></div>
-</section>
-<div class="controls"><a href="index.html">← Home</a><span>1 / 1</span><span class="disabled">Next Frankie →</span></div>
-<div class="mascot">♡ Ask Frankie!<small>Your mascot and AI chat are coming soon.</small></div>
-</main></div>
+  <aside class="sidebar">
+    <div class="logo">★ The<br>Frankies ♡</div>
+    <a href="index.html">♡ Home</a>
+    <a href="index.html#about">☆ About</a>
+    <a href="frankies.html">✿ Meet the Frankies</a>
+  </aside>
+
+  <main class="page">
+    <span class="doodle d1">✳</span>
+    <span class="doodle d2">× ×</span>
+    <span class="doodle d3">♡</span>
+    <span class="doodle d4">☆</span>
+
+    <header class="title">
+      <small>FRANKIE FILE NO. 001</small>
+      <h1>SCARE</h1>
+      <small>THE FOX // DO NOT DISTURB</small>
+    </header>
+
+    <div class="layout">
+      <div class="photo">
+        <div class="tape"></div>
+        <img src="scare.png" alt="Scare, a handmade black skull-pattern fox plushie on hot pink lace">
+      </div>
+
+      <div class="notes">
+        <div class="warning">⚠ VERY SHY CREATURE ⚠</div>
+
+        <section class="note">
+          <h2>♡ About Scare</h2>
+          <p>Scare is a shy and reclusive little fox who also happens to be the very first Frankie I ever made!</p>
+          <p>She got the scar on her stomach after getting caught in a fox trap. Ever since then, she's been scared of humans and the outside world, so she prefers to stay hidden somewhere safe.</p>
+          <p>She only comes out during October, when spooky season makes her feel a little braver. She might look scary, but she's really a sweet little fox who's been through a lot. ♡</p>
+        </section>
+
+        <section class="note">
+          <h2>★ Her Personality</h2>
+          <ul>
+            <li>Shy and quiet</li>
+            <li>Reclusive and cautious</li>
+            <li>Afraid of humans and the outdoors</li>
+            <li>Sweet once she trusts you</li>
+            <li>Loves hiding in cozy places</li>
+            <li>Only comes out in October</li>
+          </ul>
+        </section>
+
+        <div class="warning">SIGHTINGS: OCTOBER ONLY</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="index.html">← Home</a>
+      <span>001 / 001</span>
+      <span>Next →</span>
+    </div>
+
+    <div class="mascot">
+      ♡ Ask Frankie!<br>
+      <small>AI mascot coming soon...</small>
+    </div>
+  </main>
+</div>
 </body>
 </html>
