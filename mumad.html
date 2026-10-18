@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mumad the Panda | The Frankies</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #071c39;
+  --blue: #123e65;
+  --teal: #15aeb4;
+  --mint: #a5f2e5;
+  --paper: #fff8ed;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Patrick Hand", cursive;
+  background: var(--navy);
+}
+a { color: inherit; }
+.scrapbook {
+  min-height: 100vh;
+  display: flex;
+}
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 28px 18px;
+  background:
+    repeating-linear-gradient(0deg,
+      transparent 0 26px,
+      #4cbed0 27px 30px,
+      transparent 31px 55px),
+    var(--navy);
+  border-right: 7px dashed #a8f4e9;
+}
+.logo {
+  padding: 20px 10px;
+  background: var(--paper);
+  color: var(--blue);
+  font: 700 34px Fredoka, sans-serif;
+  text-align: center;
+  border: 4px solid var(--teal);
+  transform: rotate(-4deg);
+  box-shadow: 6px 7px 0 #092c48;
+  margin-bottom: 45px;
+}
+.sidebar a {
+  display: block;
+  background: var(--paper);
+  padding: 13px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 23px;
+  border: 3px dashed var(--teal);
+  box-shadow: 5px 5px 0 var(--teal);
+  transform: rotate(-2deg);
+  transition: transform .2s;
+}
+.sidebar a:nth-child(odd) { transform: rotate(3deg); }
+.sidebar a:hover { transform: rotate(0) scale(1.05); }
+.side-art {
+  color: var(--mint);
+  font-size: 65px;
+  text-align: center;
+  margin-top: 45px;
+  line-height: 1.5;
+}
+.page {
+  flex: 1;
+  min-width: 0;
+  padding: 35px 38px 75px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 20%, #26bdbe33, transparent 30%),
+    repeating-linear-gradient(135deg,
+      transparent 0 55px,
+      #ffffff0c 56px 59px,
+      transparent 60px 110px),
+    #0b3152;
+}
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 3px dashed #b6fff0;
+  opacity: .55;
+  pointer-events: none;
+}
+.paper {
+  background: var(--paper);
+  border: 3px solid var(--navy);
+  box-shadow: 8px 9px 0 #061a32;
+}
+.top {
+  max-width: 1150px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.title {
+  flex: 1;
+  padding: 10px 25px;
+  background: var(--paper);
+  transform: rotate(-2deg);
+  border: 4px dashed var(--teal);
+  text-align: center;
+  box-shadow: 8px 9px 0 #05182c;
+}
+.title h1 {
+  margin: 0;
+  font: 700 clamp(54px, 8vw, 105px)/1 Fredoka, sans-serif;
+  color: var(--navy);
+  text-shadow: 4px 4px #69d5d1;
+}
+.title p { margin: 5px; font-size: 25px; }
+.number {
+  padding: 12px;
+  background: var(--mint);
+  transform: rotate(8deg);
+  font-size: 22px;
+  border: 3px dashed var(--blue);
+}
+.content {
+  position: relative;
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+.photo {
+  position: relative;
+  background: var(--paper);
+  padding: 14px 14px 60px;
+  transform: rotate(-3deg);
+  border: 4px solid #092643;
+  box-shadow: 12px 14px 0 #04172c;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.photo::after {
+  content: "GOOD VIBES ONLY ♡";
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 25px;
+  color: var(--blue);
+}
+.tape {
+  position: absolute;
+  width: 140px;
+  height: 37px;
+  top: -19px;
+  left: 35%;
+  background: #75dcd2bd;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+.sticker {
+  position: absolute;
+  z-index: 2;
+  background: var(--paper);
+  padding: 10px 15px;
+  border: 3px dashed var(--teal);
+  font-size: 23px;
+  box-shadow: 4px 5px 0 #06223b;
+}
+.friend {
+  left: -17px;
+  top: 40%;
+  transform: rotate(-9deg);
+}
+.peace {
+  right: -15px;
+  bottom: 10%;
+  transform: rotate(8deg);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.note {
+  padding: 22px 26px;
+  background:
+    repeating-linear-gradient(to bottom,
+      transparent 0 32px,
+      #70bbcf66 33px 34px),
+    var(--paper);
+  border: 3px solid var(--teal);
+  box-shadow: 8px 9px 0 #04172c;
+  transform: rotate(1deg);
+}
+.note:nth-child(even) { transform: rotate(-2deg); }
+.note h2 {
+  margin: 0 0 15px;
+  color: #087e95;
+  font: 600 31px Fredoka, sans-serif;
+}
+.note p, .note li {
+  font-size: 21px;
+  line-height: 1.35;
+}
+.note p { margin: 12px 0; }
+.note ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.note li { margin: 5px 0; }
+.note li::before {
+  content: "♡ ";
+  color: #008d9e;
+  font-weight: bold;
+}
+.mini-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.mini-notes .note {
+  padding: 18px;
+  background: #b9eee6;
+}
+.mini-notes .note:last-child { background: #f6f4ec; }
+.mini-notes h2 { font-size: 26px; }
+.mini-notes li { font-size: 19px; }
+.decor {
+  position: absolute;
+  pointer-events: none;
+  font-size: 60px;
+  z-index: 3;
+  color: var(--mint);
+  text-shadow: 3px 3px var(--navy);
+}
+.star1 { top: 4%; left: 1%; transform: rotate(15deg); }
+.star2 { top: 40%; right: 1%; transform: rotate(-15deg); }
+.heart1 { bottom: 12%; left: 3%; }
+.heart2 { bottom: 5%; right: 5%; }
+.bamboo {
+  max-width: 1250px;
+  margin: 25px auto 0;
+  text-align: center;
+  font-size: 30px;
+  color: var(--mint);
+  letter-spacing: 8px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin: 30px auto 0;
+  flex-wrap: wrap;
+}
+.footer a, .footer span {
+  padding: 12px 22px;
+  background: var(--paper);
+  color: var(--blue);
+  text-decoration: none;
+  border: 3px dashed var(--teal);
+  font-size: 22px;
+}
+.footer a:hover { background: var(--mint); }
+.mascot {
+  margin: 28px 0 0 auto;
+  width: fit-content;
+  max-width: 230px;
+  padding: 14px;
+  border-radius: 25px;
+  background: var(--paper);
+  border: 3px solid var(--teal);
+  font-size: 20px;
+  text-align: center;
+}
+@media (max-width: 950px) {
+  .scrapbook { flex-direction: column; }
+  .sidebar { width: 100%; border-right: 0; }
+  .sidebar a { display: inline-block; margin: 8px; }
+  .side-art { display: none; }
+  .content { grid-template-columns: 1fr; }
+  .page { padding: 30px 22px 60px; }
+  .top { flex-direction: column; }
+  .decor { font-size: 35px; }
+}
+@media (max-width: 450px) {
+  .mini-notes { grid-template-columns: 1fr; }
+  .note { padding: 18px; }
+  .note p, .note li { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+<div class="scrapbook">
+  <aside class="sidebar">
+    <div class="logo">☆ The<br>Frankies ♡</div>
+    <nav>
+      <a href="index.html">♡ Home</a>
+      <a href="index.html#about">☆ About</a>
+      <a href="frankies.html">✿ Meet the Frankies</a>
+    </nav>
+    <div class="side-art">☆ ♡<br>☯<br>✧ ☆</div>
+  </aside>
+
+  <main class="page">
+    <span class="decor star1">☆</span>
+    <span class="decor star2">✧</span>
+    <span class="decor heart1">♡</span>
+    <span class="decor heart2">☆</span>
+
+    <header class="top">
+      <div class="title">
+        <h1>MUMAD ☆</h1>
+        <p>the panda ♡</p>
+      </div>
+      <div class="number">FRANKIE No. 02 ♡</div>
+    </header>
+
+    <div class="content">
+      <div class="photo">
+        <div class="tape"></div>
+        <img src="mumad.png" alt="Mumad, a handmade panda Frankie on a mint and purple lace background">
+        <span class="sticker friend">♡ just a chill guy</span>
+        <span class="sticker peace">☯ peace always!</span>
+      </div>
+
+      <div class="details">
+        <section class="note">
+          <h2>♡ About Mumad ♡</h2>
+          <p>Mumad is a super chill little panda who spends most of his time deep in meditation. He's a true pacifist who believes that problems should be solved with kindness and understanding instead of violence.</p>
+          <p>He's always interested in making new friends and loves getting to know different Frankies. He avoids arguments whenever possible and tries to help everyone get along.</p>
+          <p>Whether he's meditating, relaxing, or making new friends, Mumad always brings a little peace wherever he goes. ♡</p>
+        </section>
+
+        <section class="note">
+          <h2>☆ His Personality</h2>
+          <ul>
+            <li>Pacifist — believes in peace and nonviolence</li>
+            <li>Super chill and laid-back</li>
+            <li>Friendly and welcoming</li>
+            <li>Patient and understanding</li>
+            <li>Avoids conflict and arguments</li>
+            <li>Loves making new friends</li>
+            <li>Thoughtful and compassionate</li>
+          </ul>
+        </section>
+
+        <div class="mini-notes">
+          <section class="note">
+            <h2>♡ Likes</h2>
+            <ul>
+              <li>Deep meditation</li>
+              <li>Peaceful conversations</li>
+              <li>Making new friends</li>
+              <li>Quiet mornings</li>
+              <li>Helping others</li>
+            </ul>
+          </section>
+          <section class="note">
+            <h2>✕ Dislikes</h2>
+            <ul>
+              <li>Violence</li>
+              <li>Fighting</li>
+              <li>Unnecessary drama</li>
+              <li>Cruelty</li>
+              <li>Being rushed</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="bamboo">✧ ♡ ☯ ✿ ♡ ✧</div>
+
+    <div class="footer">
+      <a href="frankies.html">← Previous: Scare</a>
+      <span>2 / 2</span>
+      <span>Next: coming soon →</span>
+    </div>
+
+    <div class="mascot">
+      ♡ Ask Frankie!
+      <div style="font-size:15px">Your AI Frankie is coming soon!</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
