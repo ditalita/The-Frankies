@@ -5,92 +5,331 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carrot the Bunny | The Frankies</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  background: #3c2218;
-  font-family: Arial, sans-serif;
+  color: #472617;
+  font-family: 'Patrick Hand', cursive;
+  background: #42251b;
+  background-image: repeating-linear-gradient(35deg, transparent 0 65px, #ffffff08 66px 69px);
 }
-.scrapbook {
-  width: 100%;
-  max-width: 1800px;
+
+.layout {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  max-width: 1450px;
   margin: auto;
-  position: relative;
+  min-height: 100vh;
 }
-.art {
+
+.sidebar {
+  padding: 25px 14px;
+  background: repeating-linear-gradient(0deg, #713a26 0 28px, #a65b39 28px 52px, #d18a57 52px 58px);
+  border-right: 8px dotted #e9b37b;
+  text-align: center;
+}
+
+.logo {
+  background: #f6d8a9;
+  border: 4px solid #42251b;
+  padding: 17px 7px;
+  transform: rotate(-5deg);
+  font: 700 25px Fredoka, sans-serif;
+  margin-bottom: 35px;
+  box-shadow: 5px 6px #3b241b;
+}
+
+.sidebar a {
+  display: block;
+  background: #543022;
+  color: #ffe0ac;
+  border: 2px dashed #55d6cf;
+  padding: 12px 5px;
+  margin: 12px 0;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.sidebar a:hover, .nav a:hover {
+  background: #117e82;
+  color: white;
+}
+
+.side-doodle {
+  font-size: 42px;
+  margin-top: 35px;
+  line-height: 1.8;
+}
+
+main {
+  position: relative;
+  padding: 28px 35px;
+  overflow: hidden;
+  background-color: #b97743;
+  background-image:
+    radial-gradient(#f6d4a455 2px, transparent 3px),
+    repeating-linear-gradient(135deg, transparent 0 90px, #512b1c22 92px 96px);
+  background-size: 35px 35px, auto;
+  border: 12px solid #663821;
+}
+
+.header {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.file {
+  font-size: 17px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  font: 700 clamp(48px, 8vw, 100px) Fredoka, sans-serif;
+  color: #eea14e;
+  margin: 0;
+  line-height: 1;
+  transform: rotate(-3deg);
+  -webkit-text-stroke: 3px #5a2e1b;
+  text-shadow: 5px 7px #f5d6a7;
+}
+
+.subtitle {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 15px 0 25px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(250px, 1.1fr) minmax(280px, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+.photo-area {
+  position: relative;
+  padding: 17px 17px 45px;
+  background: #f8dfb8;
+  transform: rotate(-4deg);
+  border: 2px solid #6a412a;
+  box-shadow: 9px 10px #4c291e88;
+}
+
+.photo-area img {
   display: block;
   width: 100%;
-  height: auto;
+  border: 4px solid #d8a06b;
 }
-.link {
+
+.photo-caption {
+  text-align: center;
+  margin-top: 13px;
+  font-size: 20px;
+}
+
+.tape {
   position: absolute;
-  display: block;
-  border-radius: 10px;
+  top: -14px;
+  left: 30%;
+  width: 42%;
+  height: 30px;
+  background: #35bfc0b9;
+  transform: rotate(6deg);
+  z-index: 2;
+  border: 2px dashed #fff8;
 }
-.link:hover {
-  background: #ffffff25;
+
+.sticker {
+  position: absolute;
+  font-size: 40px;
+  filter: drop-shadow(2px 3px #3b231b);
 }
-.link:focus-visible {
-  outline: 4px solid turquoise;
+
+.s1 { top: 13%; left: -15px; transform: rotate(-15deg); }
+.s2 { top: 35%; right: -20px; color: #12b8bd; }
+.s3 { bottom: 12%; left: -22px; color: #12b8bd; }
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.home {
-  left: 1%;
-  top: 21%;
-  width: 15%;
-  height: 8%;
+
+.paper {
+  background: #f9e8c7;
+  padding: 19px 22px;
+  border: 2px solid #9e603d;
+  box-shadow: 7px 8px #522d2180;
+  transform: rotate(2deg);
 }
-.about {
-  left: 1%;
-  top: 31%;
-  width: 15%;
-  height: 8%;
+
+.paper:nth-child(2) {
+  background: #c3eee6;
+  transform: rotate(-2deg);
 }
-.meet {
-  left: 1%;
-  top: 41%;
-  width: 15%;
-  height: 8%;
+
+.paper:nth-child(3) {
+  background: #f9c6a1;
+  transform: rotate(2deg);
+  text-align: center;
 }
-.bottom-home {
-  left: 24%;
-  top: 90%;
-  width: 11%;
-  height: 8%;
+
+h2 {
+  font: 700 25px Fredoka, sans-serif;
+  margin: 0 0 12px;
 }
-.previous {
-  left: 40%;
-  top: 90%;
-  width: 11%;
-  height: 8%;
+
+p {
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 0;
 }
-@media (max-width: 700px) {
-  body { overflow-x: auto; }
-  .scrapbook { width: 1000px; }
+
+ul {
+  margin: 0;
+  padding-left: 23px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.carrots {
+  font-size: 31px;
+  letter-spacing: 5px;
+  margin: 10px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.nav a, .count {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 3px dashed #55d5ce;
+  background: #513020;
+  color: #fff0d4;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.doodles {
+  text-align: center;
+  font-size: 36px;
+  color: #2de1da;
+  margin: 25px 0 0;
+  letter-spacing: 20px;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-right: 0; border-bottom: 7px dotted #e9b37b; }
+  .sidebar a { display: inline-block; margin: 5px; padding: 8px 12px; }
+  .side-doodle { display: none; }
+  main { padding: 20px; }
+  .content { grid-template-columns: 1fr; }
+  .photo-area { max-width: 470px; margin: 10px auto 25px; }
 }
 </style>
 </head>
+
 <body>
-<main class="scrapbook">
-  <img
-    class="art"
-src="./carrot-design.png?v=2"
-    alt="Carrot the Bunny's scrapbook page"
-  >
+<div class="layout">
 
-  <a class="link home" href="index.html"
-     aria-label="Home"></a>
+  <aside class="sidebar">
+    <div class="logo">♡ The<br>Frankies ♡</div>
+    <a href="index.html">♡ Home</a>
+    <a href="index.html#about">☆ About</a>
+    <a href="frankies.html">✿ Meet the Frankies</a>
+    <div class="side-doodle">🥕<br>♡<br>✦<br>🥕</div>
+  </aside>
 
-  <a class="link about" href="index.html#about"
-     aria-label="About"></a>
+  <main>
+    <header class="header">
+      <div class="file">FRANKIE FILE NO. 003</div>
+      <h1>CARROT</h1>
+      <div class="subtitle">THE BUNNY // ALWAYS HUNGRY</div>
+    </header>
 
-  <a class="link meet" href="frankies.html"
-     aria-label="Meet the Frankies"></a>
+    <div class="content">
 
-  <a class="link bottom-home" href="index.html"
-     aria-label="Home"></a>
+      <div class="photo-area">
+        <div class="tape"></div>
+        <span class="sticker s1">🥕</span>
+        <span class="sticker s2">♡</span>
+        <span class="sticker s3">✧</span>
 
-  <a class="link previous" href="mumad.html"
-     aria-label="Previous: Mumad"></a>
-</main>
+        <img src="carrot-design.png" alt="Carrot the Bunny">
+
+        <div class="photo-caption">
+          FOUND: ALWAYS NEAR FOOD // 003 ♡
+        </div>
+      </div>
+
+      <div class="notes">
+        <section class="paper">
+          <h2>♡ About Carrot</h2>
+          <p>
+            Carrot is a very ditzy little bunny who only has
+            one thing on her mind: FOOD!
+            <br><br>
+            She's a major glutton and will eat just about
+            anything she can get her paws on. She's
+            constantly thinking about her next meal,
+            even when she's already eating something.
+            <br><br>
+            Carrot isn't exactly the brightest bunny in
+            the bunch. She gets distracted easily,
+            forgets what she's doing, and sometimes
+            walks into a room just to forget why she
+            went there.
+            <br><br>
+            But somehow, she never forgets where
+            the snacks are hidden.
+            <br><br>
+            She's a little clueless, extremely hungry,
+            and completely lovable. ♡
+          </p>
+        </section>
+
+        <section class="paper">
+          <h2>✦ Her Personality</h2>
+          <ul>
+            <li>Extremely gluttonous</li>
+            <li>Ditzy and scatterbrained</li>
+            <li>Easily distracted, especially by food</li>
+            <li>Goofy and unintentionally funny</li>
+            <li>Always hungry</li>
+            <li>Sweet but a little clueless</li>
+          </ul>
+        </section>
+
+        <section class="paper">
+          <h2>♡ CARROTS ♡</h2>
+          <div class="carrots">🥕 ♡ 🥕 ♡ 🥕</div>
+          <p>Carrots. Carrots. And more carrots.</p>
+          <p>CURRENT THOUGHT: CARROT.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="doodles">♡ ✧ ♡ ✿ ☆ ♡</div>
+
+    <footer class="nav">
+      <a href="index.html">← Home</a>
+      <span class="count">003 / 003</span>
+      <a href="mumad.html">← Previous: Mumad</a>
+    </footer>
+  </main>
+</div>
 </body>
 </html>
