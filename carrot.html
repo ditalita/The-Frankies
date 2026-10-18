@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrot the Bunny | The Frankies</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #3c2218;
+  font-family: Arial, sans-serif;
+}
+.scrapbook {
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  position: relative;
+}
+.art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.link {
+  position: absolute;
+  display: block;
+  border-radius: 10px;
+}
+.link:hover {
+  background: #ffffff25;
+}
+.link:focus-visible {
+  outline: 4px solid turquoise;
+}
+.home {
+  left: 1%;
+  top: 21%;
+  width: 15%;
+  height: 8%;
+}
+.about {
+  left: 1%;
+  top: 31%;
+  width: 15%;
+  height: 8%;
+}
+.meet {
+  left: 1%;
+  top: 41%;
+  width: 15%;
+  height: 8%;
+}
+.bottom-home {
+  left: 24%;
+  top: 90%;
+  width: 11%;
+  height: 8%;
+}
+.previous {
+  left: 40%;
+  top: 90%;
+  width: 11%;
+  height: 8%;
+}
+@media (max-width: 700px) {
+  body { overflow-x: auto; }
+  .scrapbook { width: 1000px; }
+}
+</style>
+</head>
+<body>
+<main class="scrapbook">
+  <img
+    class="art"
+    src="carrot-design.png"
+    alt="Carrot the Bunny's scrapbook page"
+  >
+
+  <a class="link home" href="index.html"
+     aria-label="Home"></a>
+
+  <a class="link about" href="index.html#about"
+     aria-label="About"></a>
+
+  <a class="link meet" href="frankies.html"
+     aria-label="Meet the Frankies"></a>
+
+  <a class="link bottom-home" href="index.html"
+     aria-label="Home"></a>
+
+  <a class="link previous" href="mumad.html"
+     aria-label="Previous: Mumad"></a>
+</main>
+</body>
+</html>
