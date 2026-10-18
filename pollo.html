@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pollo the Chicken | The Frankies</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #353b18;
+  color: #40301a;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.scrapbook {
+  max-width: 1550px;
+  min-height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr);
+  background: #899a36;
+}
+
+.sidebar {
+  padding: 22px 12px;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #52672c 0 30px,
+      #617633 30px 55px,
+      #76853d 55px 60px
+    );
+  border-right: 8px dashed #e9ae48;
+  text-align: center;
+}
+
+.logo {
+  background: #f5d18b;
+  padding: 18px 7px;
+  border: 4px solid #59411d;
+  box-shadow: 5px 6px #333b1b;
+  transform: rotate(-5deg);
+  font: 700 26px Fredoka, sans-serif;
+  margin-bottom: 35px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 5px;
+  background: #394620;
+  border: 2px dashed #ffb94d;
+  color: #fff1c9;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.sidebar a:hover,
+footer a:hover {
+  background: #cb692b;
+  color: white;
+}
+
+.side-art {
+  font-size: 37px;
+  line-height: 1.8;
+  margin-top: 35px;
+}
+
+main {
+  padding: 26px;
+  min-width: 0;
+  background-color: #9cac43;
+  background-image:
+    radial-gradient(circle, #f4d46b55 2px, transparent 3px),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 75px,
+      #3d541e22 76px 79px
+    );
+  background-size: 28px 28px, auto;
+  border: 10px solid #62762b;
+}
+
+.header {
+  text-align: center;
+  background: #f8dc9e;
+  border: 3px solid #6a4c21;
+  box-shadow: 7px 8px #4b5527;
+  padding: 12px;
+  transform: rotate(-1deg);
+  margin-bottom: 30px;
+}
+
+.file {
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font: 700 clamp(58px, 9vw, 110px) Fredoka, sans-serif;
+  color: #f2a42d;
+  -webkit-text-stroke: 3px #754421;
+  text-shadow: 5px 6px #fff2c4;
+  line-height: 1;
+  margin: 5px 0;
+  transform: rotate(-3deg);
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+.photo {
+  position: relative;
+  background: #f9e4b6;
+  padding: 15px 15px 42px;
+  border: 3px solid #69451f;
+  box-shadow: 8px 9px #435122;
+  transform: rotate(-3deg);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  border: 4px solid #d68c36;
+}
+
+.tape {
+  position: absolute;
+  top: -14px;
+  left: 30%;
+  width: 40%;
+  height: 29px;
+  background: #e5a13bbb;
+  border: 2px dashed #fff5;
+  transform: rotate(6deg);
+}
+
+.photo-caption {
+  text-align: center;
+  font-size: 19px;
+  margin-top: 14px;
+}
+
+.sticker {
+  position: absolute;
+  font-size: 40px;
+  filter: drop-shadow(2px 3px #3d321c);
+}
+
+.s1 { top: 14%; left: -22px; }
+.s2 { right: -20px; top: 42%; }
+.s3 { left: -18px; bottom: 12%; }
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paper {
+  background: #fff0c7;
+  border: 2px solid #9b712e;
+  box-shadow: 7px 8px #485624;
+  padding: 20px;
+  transform: rotate(2deg);
+}
+
+.paper:nth-child(2) {
+  background: #f9cb81;
+  transform: rotate(-2deg);
+}
+
+h2 {
+  font: 700 25px Fredoka, sans-serif;
+  margin: 0 0 12px;
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 23px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.panic-report {
+  margin-top: 30px;
+  padding: 23px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f7e3a4 0 20px,
+      #f2d18b 20px 40px
+    );
+  border: 4px dashed #ad5725;
+  box-shadow: 8px 9px #475524;
+  transform: rotate(-1deg);
+}
+
+.panic-title {
+  font: 700 30px Fredoka, sans-serif;
+  text-align: center;
+  color: #a53e1b;
+  margin-bottom: 20px;
+}
+
+.panic-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.danger {
+  background: #c84b22;
+  color: white;
+  padding: 5px 12px;
+  border: 2px solid #723017;
+  transform: rotate(4deg);
+}
+
+.meter {
+  margin-top: 15px;
+  height: 28px;
+  border: 3px solid #58391b;
+  background: #f8efcd;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 98%;
+  background: repeating-linear-gradient(
+    45deg,
+    #d85b24 0 15px,
+    #f3a13e 15px 30px
+  );
+}
+
+.meter-note {
+  text-align: center;
+  margin: 9px 0 22px;
+  font-size: 19px;
+}
+
+.worries {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 15px;
+}
+
+.worry {
+  background: #fff5d8;
+  border: 2px dashed #b57936;
+  padding: 15px;
+  font-size: 20px;
+  transform: rotate(-1deg);
+}
+
+.worry:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.quote {
+  margin-top: 30px;
+  background: #fff0c8;
+  border: 3px solid #9a5b2a;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+  box-shadow: 7px 8px #485624;
+  transform: rotate(1deg);
+}
+
+.doodles {
+  margin: 30px 0 5px;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 13px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+footer a, footer span {
+  background: #405026;
+  color: #fff0c7;
+  border: 3px dashed #f5b94e;
+  padding: 12px 18px;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+@media (max-width: 850px) {
+  .content { grid-template-columns: 1fr; }
+  .photo { max-width: 490px; margin: 10px auto 25px; }
+}
+
+@media (max-width: 650px) {
+  .scrapbook { grid-template-columns: 1fr; }
+  .sidebar { border-right: 0; }
+  .sidebar a { display: inline-block; margin: 5px; padding: 9px; }
+  .side-art { display: none; }
+  main { padding: 15px; }
+  .worries { grid-template-columns: 1fr; }
+  .panic-level { flex-wrap: wrap; }
+}
+</style>
+</head>
+
+<body>
+<div class="scrapbook">
+
+  <aside class="sidebar">
+    <div class="logo">♡ The<br>Frankies ♡</div>
+    <a href="index.html">♡ Home</a>
+    <a href="index.html#about">☆ About</a>
+    <a href="frankies.html">✿ Meet the Frankies</a>
+    <div class="side-art">🐥<br>⚠️<br>🌽<br>♡</div>
+  </aside>
+
+  <main>
+    <header class="header">
+      <div class="file">FRANKIE FILE NO. 005</div>
+      <h1>POLLO</h1>
+      <div class="subtitle">
+        THE ANXIOUS CHICKEN // PROFESSIONAL WORRIER
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="photo">
+        <div class="tape"></div>
+        <span class="sticker s1">⚠️</span>
+        <span class="sticker s2">🌽</span>
+        <span class="sticker s3">✳</span>
+
+        <img src="pollo.png" alt="Pollo the anxious chicken">
+
+        <div class="photo-caption">
+          LAST SEEN: PANICKING OVER NOTHING // 005
+        </div>
+      </div>
+
+      <div class="notes">
+
+        <section class="paper">
+          <h2>♡ About Pollo</h2>
+          <p>
+            Pollo is a very anxious little chicken who
+            worries about absolutely EVERYTHING.
+            A leaf falling? Terrifying. Someone sneezing?
+            The end of the world. A weird noise outside?
+            He's already planning his escape.
+            <br><br>
+            He's constantly convinced something terrible
+            is about to happen, even when everything
+            is perfectly fine.
+            <br><br>
+            And unfortunately, whenever Pollo gets nervous,
+            he has to poop. Which is pretty much all
+            the time.
+          </p>
+        </section>
+
+        <section class="paper">
+          <h2>✿ His Personality</h2>
+          <ul>
+            <li>Extremely anxious</li>
+            <li>Overthinks absolutely everything</li>
+            <li>Easily startled</li>
+            <li>Always expects the worst</li>
+            <li>Runs away from his own shadow</li>
+            <li>Has a very nervous stomach</li>
+            <li>Sweet when he isn't panicking</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="panic-report">
+      <div class="panic-title">⚠ POLLO'S PANIC REPORT ⚠</div>
+
+      <div class="panic-level">
+        <span>Current panic level</span>
+        <span class="danger">EXTREME!</span>
+      </div>
+
+      <div class="meter">
+        <div class="meter-fill"></div>
+      </div>
+
+      <div class="meter-note">
+        98% — He heard a twig snap.
+      </div>
+
+      <h2>Things Pollo is currently worried about:</h2>
+
+      <div class="worries">
+        <div class="worry">🥚 What if his egg comes back?</div>
+        <div class="worry">🌽 What if he runs out of corn?</div>
+        <div class="worry">🍃 WHY DID THAT LEAF MOVE?!</div>
+        <div class="worry">💩 Does he need to poop again? (Yes.)</div>
+      </div>
+    </section>
+
+    <div class="quote">
+      "EVERYTHING IS FINE. EVERYTHING IS FINE.
+      EVERYTHING IS— AHHHH!"
+      <div>🐾 ♡ ⚠ ♡ 🐾</div>
+    </div>
+
+    <div class="doodles">🐥 ✳ ♡ 🌽 ✳</div>
+
+    <footer>
+      <a href="mushu.html">← Previous: Mushu</a>
+      <a href="index.html">♡ Home</a>
+      <span>005 / 005</span>
+      <span>Next: Coming Soon →</span>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
