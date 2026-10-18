@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scare the Fox | The Frankies</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -34,7 +37,8 @@ body {
   border-right: 9px dashed #0d090e;
 }
 
-.logo, .sidebar a {
+.logo,
+.sidebar a {
   display: block;
   padding: 15px;
   margin-bottom: 24px;
@@ -55,6 +59,10 @@ body {
 
 .sidebar a:nth-child(even) {
   transform: rotate(3deg);
+}
+
+.sidebar a:hover {
+  background: #3b1832;
 }
 
 .page {
@@ -131,7 +139,7 @@ body {
 }
 
 .photo::after {
-  content: "FOUND: OCTOBER ONLY  //  001";
+  content: "FOUND: OCTOBER ONLY // 001";
   position: absolute;
   bottom: 15px;
   left: 20px;
@@ -177,7 +185,8 @@ body {
   color: #a41d60;
 }
 
-.note p, .note li {
+.note p,
+.note li {
   font-size: 19px;
   line-height: 1.5;
 }
@@ -206,39 +215,55 @@ body {
   z-index: 2;
 }
 
-.d1 { top: 30px; left: 5%; transform: rotate(20deg); }
-.d2 { top: 240px; right: 2%; color: #170b17; }
-.d3 { bottom: 35px; left: 3%; transform: rotate(-25deg); }
-.d4 { bottom: 80px; right: 5%; color: #ffb7d8; }
+.d1 {
+  top: 30px;
+  left: 5%;
+  transform: rotate(20deg);
+}
 
-.stamp {
-  position: absolute;
-  top: 45%;
-  right: 1%;
-  padding: 12px;
-  border: 4px solid #1a1018;
-  color: #180c16;
-  font-weight: bold;
-  transform: rotate(17deg);
-  opacity: .8;
+.d2 {
+  top: 240px;
+  right: 2%;
+  color: #170b17;
+}
+
+.d3 {
+  bottom: 35px;
+  left: 3%;
+  transform: rotate(-25deg);
+}
+
+.d4 {
+  bottom: 80px;
+  right: 5%;
+  color: #ffb7d8;
 }
 
 .footer {
   position: relative;
   margin: 55px auto 0;
-  max-width: 450px;
+  max-width: 540px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
-.footer a, .footer span {
+.footer a,
+.footer span {
   padding: 13px 18px;
   background: #170d17;
   color: #ff85ba;
   border: 2px dashed #4ad4ba;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  background: #4ad4ba;
+  color: #170d17;
+  transform: rotate(-2deg);
 }
 
 .mascot {
@@ -257,26 +282,54 @@ body {
 }
 
 @media (max-width: 900px) {
-  .book { flex-direction: column; }
-  .sidebar { width: 100%; border-right: 0; }
-  .sidebar a { display: inline-block; margin: 8px; }
-  .layout { grid-template-columns: 1fr; }
-  .page { padding: 45px 25px 150px; }
-  .doodle { font-size: 45px; }
-  .mascot { position: relative; margin: 35px 0 0 auto; }
+  .book {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 45px 25px 150px;
+  }
+
+  .doodle {
+    font-size: 45px;
+  }
+
+  .mascot {
+    position: relative;
+    margin: 35px 0 0 auto;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <div class="book">
+
   <aside class="sidebar">
     <div class="logo">★ The<br>Frankies ♡</div>
+
     <a href="index.html">♡ Home</a>
     <a href="index.html#about">☆ About</a>
     <a href="frankies.html">✿ Meet the Frankies</a>
   </aside>
 
   <main class="page">
+
     <span class="doodle d1">✳</span>
     <span class="doodle d2">× ×</span>
     <span class="doodle d3">♡</span>
@@ -289,23 +342,50 @@ body {
     </header>
 
     <div class="layout">
+
       <div class="photo">
         <div class="tape"></div>
-        <img src="scare.png" alt="Scare, a handmade black skull-pattern fox plushie on hot pink lace">
+        <img
+          src="scare.png"
+          alt="Scare, a handmade skull-pattern fox plushie on hot pink lace"
+        >
       </div>
 
       <div class="notes">
-        <div class="warning">⚠ VERY SHY CREATURE ⚠</div>
+
+        <div class="warning">
+          ⚠ VERY SHY CREATURE ⚠
+        </div>
 
         <section class="note">
           <h2>♡ About Scare</h2>
-          <p>Scare is a shy and reclusive little fox who also happens to be the very first Frankie I ever made!</p>
-          <p>She got the scar on her stomach after getting caught in a fox trap. Ever since then, she's been scared of humans and the outside world, so she prefers to stay hidden somewhere safe.</p>
-          <p>She only comes out during October, when spooky season makes her feel a little braver. She might look scary, but she's really a sweet little fox who's been through a lot. ♡</p>
+
+          <p>
+            Scare is a shy and reclusive little fox who
+            also happens to be the very first Frankie
+            I ever made!
+          </p>
+
+          <p>
+            She got the scar on her stomach after
+            getting caught in a fox trap. Ever since
+            then, she's been scared of humans and the
+            outside world, so she prefers to stay
+            hidden somewhere safe.
+          </p>
+
+          <p>
+            She only comes out during October, when
+            spooky season makes her feel a little
+            braver. She might look scary, but she's
+            really a sweet little fox who's been
+            through a lot. ♡
+          </p>
         </section>
 
         <section class="note">
           <h2>★ Her Personality</h2>
+
           <ul>
             <li>Shy and quiet</li>
             <li>Reclusive and cautious</li>
@@ -316,21 +396,28 @@ body {
           </ul>
         </section>
 
-        <div class="warning">SIGHTINGS: OCTOBER ONLY</div>
+        <div class="warning">
+          SIGHTINGS: OCTOBER ONLY
+        </div>
+
       </div>
     </div>
 
+    <!-- SCRAPBOOK PAGE NAVIGATION -->
     <div class="footer">
       <a href="index.html">← Home</a>
-      <span>001 / 001</span>
-      <span>Next →</span>
+      <span>001 / 002</span>
+      <a href="mumad.html">Next: Mumad →</a>
     </div>
 
+    <!-- FUTURE AI FRANKIE -->
     <div class="mascot">
       ♡ Ask Frankie!<br>
       <small>AI mascot coming soon...</small>
     </div>
+
   </main>
 </div>
+
 </body>
 </html>
