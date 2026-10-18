@@ -260,3 +260,42 @@ nav a:hover {
     bottom: 12px;
   }
 }
+/* Floating decorations */
+.floating-decoration {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  color: #e94389;
+  opacity: 0.65;
+  animation: floatAround 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatAround {
+  from {
+    transform: translateY(0) rotate(-15deg);
+  }
+  to {
+    transform: translateY(-25px) rotate(20deg);
+  }
+}
+
+/* Click sparkles */
+.click-sparkle {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  color: #e82e82;
+  font-size: 32px;
+  animation: sparklePop 0.7s ease-out forwards;
+}
+
+@keyframes sparklePop {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -110%) scale(1.8) rotate(40deg);
+    opacity: 0;
+  }
+}
